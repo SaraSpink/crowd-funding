@@ -6,7 +6,7 @@ import { Project } from './project.model';
 })
 export class ArtPipe implements PipeTransform {
 
-  transform(input: Project[], category) {
+  transform(input: Project[]) {
     var output: Project[] = [];
     for (var i = 0; i < input.length; i++) {
       if (input[i].category === "Art") {
