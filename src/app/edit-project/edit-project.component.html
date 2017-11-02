@@ -11,3 +11,7 @@
 <label>Update Project Description:</label>
 <input [(ngModel)]="selectedProject.fundingGoal">
 <br>
+
+<button (click)="beginUpdatingProject(selectedProject)">Update</button>
+<hr>
+<button (click)="beginDeletingProject(selectedProject)">Delete</button>
