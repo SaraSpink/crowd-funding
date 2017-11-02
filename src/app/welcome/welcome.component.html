@@ -6,9 +6,13 @@
       <h3><a routerLink="art">Visual Arts</a></h3>
       <div *ngFor="let project of projects | async | art" (click)="goToDetailPage(project)" class="panel panel-default">
         <div class="panel-body">
-          <h4 (click)="goToDetailPage(project)"><em>{{project.title}}</em></h4>
+          <h4><em>{{project.title}}</em></h4>
           <p>{{project.details}}</p>
-          <p>{{project.$key}}</p>
+          <div *ngIf="currentRoute === '/admin'">
+            <p>{{project.$key}}</p>
+            <hr>
+            <app-edit-project [selectedProject]="project"></app-edit-project>
+          </div>
         </div>
       </div>
     </div>
@@ -16,9 +20,13 @@
       <h3><a routerLink="film">Film and Theater</a></h3>
       <div *ngFor="let project of projects | async | film" (click)="goToDetailPage(project)" class="panel panel-default">
         <div class="panel-body">
-          <h4 (click)="goToDetailPage(project)"><em>{{project.title}}</em></h4>
+          <h4><em>{{project.title}}</em></h4>
           <p>{{project.details}}</p>
-          <p>{{project.$key}}</p>
+          <div *ngIf="currentRoute === '/admin'">
+            <p>{{project.$key}}</p>
+            <hr>
+            <app-edit-project [selectedProject]="project"></app-edit-project>
+          </div>
         </div>
       </div>
     </div>
@@ -26,9 +34,13 @@
       <h3><a routerLink="music">Music</a></h3>
       <div *ngFor="let project of projects | async | music" (click)="goToDetailPage(project)" class="panel panel-default">
         <div class="panel-body">
-          <h4 (click)="goToDetailPage(project)"><em>{{project.title}}</em></h4>
+          <h4><em>{{project.title}}</em></h4>
           <p>{{project.details}}</p>
-          <p>{{project.$key}}</p>
+          <div *ngIf="currentRoute === '/admin'">
+            <p>{{project.$key}}</p>
+            <hr>
+            <app-edit-project [selectedProject]="project"></app-edit-project>
+          </div>
         </div>
       </div>
     </div>
